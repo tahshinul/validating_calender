@@ -23,8 +23,12 @@ public class calender {
 	driver.findElement(By.id("ctl00_mainContent_view_date1")).click();
 	driver.findElement(By.xpath("//a[@class='ui-state-default ui-state-highlight ui-state-hover']")).click();
 	
-	
-	
+	driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_0")).click();
+	if (driver.findElement(By.id("Div1")).getAttribute("style").contains("opacity: 0.5")) {
+		System.out.println("Disabled");
+	} else if (driver.findElement(By.id("Div1")).getAttribute("style").contains("opacity: 1")) {
+	System.out.println("enabled");	
+	}
 	
 	Thread.sleep(3000);
 	driver.quit();
